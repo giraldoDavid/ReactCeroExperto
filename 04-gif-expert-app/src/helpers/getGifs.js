@@ -2,7 +2,7 @@
 export const getGifs = async(category) => {
         
     const API_KEY = "se04DYJeIyiVxGfKZN5Ge5EsVQ5Jazcf";
-    const URL = `https://api.giphy.com/v1/gifs/search?api_key=${ API_KEY }&q=${ category }&limit=20`;
+    const URL = `https://api.giphy.com/v1/gifs/search?api_key=${ API_KEY }&q=${ category }&limit=10`;
 
     const response = await fetch(URL);
     const { data } = await response.json();
@@ -14,7 +14,6 @@ export const getGifs = async(category) => {
         url: img.images.downsized_medium.url
     }))
 
-    console.log("gifs", gifs);
     return gifs;
-}
+};
 
